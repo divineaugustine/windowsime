@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Sample1/Debug
+/Sample1/x64/Debug
+/Sample1/.vs/IMESample/v15
+/Sample2/.vs/IMESample2/v15
+/Sample2/Debug
+/.vs/IMESamples/v15
+/Sample2/x64/Debug
+/x64/Debug
+/Sample1/x64/Release
+/Sample2/x64/Release
+/x64/Release

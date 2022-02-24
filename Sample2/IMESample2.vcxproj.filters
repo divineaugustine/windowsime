@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="IMESample.cpp" />
+    <ClCompile Include="IME\TextService.cpp">
+      <Filter>IME</Filter>
+    </ClCompile>
+    <ClCompile Include="IME\TextSink.cpp">
+      <Filter>IME</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TextServiceManager.h" />
+    <ClInclude Include="IME\ComPtr.h">
+      <Filter>IME</Filter>
+    </ClInclude>
+    <ClInclude Include="IME\ITextService.h">
+      <Filter>IME</Filter>
+    </ClInclude>
+    <ClInclude Include="IME\ITextSink.h">
+      <Filter>IME</Filter>
+    </ClInclude>
+    <ClInclude Include="IME\TextService.h">
+      <Filter>IME</Filter>
+    </ClInclude>
+    <ClInclude Include="IME\TextSink.h">
+      <Filter>IME</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="IME">
+      <UniqueIdentifier>{a048baac-45b0-44d1-b8b3-d32dfb240ecb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
