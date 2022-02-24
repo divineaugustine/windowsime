@@ -804,6 +804,9 @@ HRESULT __stdcall TextStore::UpdateUIElement(DWORD dwUIElementId)
 		//	delete[] pageIndex;
 		//}
 
+		// TODO japanese is giving the selected index as 0 even when there are no candidates selected.
+		// In windows Japanese IME, there are no candidate keyboard shortcuts shows untill you press down arrow but there is noway to detect it as keyboard press is intercepted by IME
+
 		if (observer) observer->onCandidateListChanged();
 	}
 
@@ -1077,6 +1080,7 @@ void TextSink::setObserver(ISinkObserver* observer)
 			std::wstring text = observer->getText();
 			textStore->setBuffer(text);
 		}
+		// TODO, Should we do this? Is this the right way to properly close the current composition ?
 		else
 		{
 			ITfDocumentMgr	*predocumentManager = nullptr;
