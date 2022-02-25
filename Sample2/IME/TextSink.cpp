@@ -1070,6 +1070,11 @@ void TextSink::setObserver(ISinkObserver* observer)
 		if (observer && observer == textStore->observer) return;
 
 		textStore->info.candidateList.clear();
+		if (textStore->observer)
+		{
+			// call so that the previous candidate lists get cleared.
+			textStore->observer->onCandidateListChanged();
+		}
 		textStore->observer = observer;
 		ITfThreadMgr* threadManager = textService.getThreadManager();
 
