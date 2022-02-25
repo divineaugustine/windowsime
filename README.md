@@ -1,5 +1,5 @@
 # windowsime
-Supporting Test app for windowless ime APIs
+Supporting Test app for windowless ime APIs. Below are the queries raised by Parmod.
 
 https://docs.microsoft.com/en-us/answers/questions/731668/ime-how-to-terminate-the-in-progress-composition.html
 
