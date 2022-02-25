@@ -242,6 +242,7 @@ public:
 	void select(bool sel)
 	{
 		selection = sel;
+		mgr.getTextSink().setObserver(sel?this:nullptr);
 	}
 
 private:
@@ -398,18 +399,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			pcurrent = &box1;
 			box2.select(false);
 			box1.select(true);
-			mgr.getTextSink().setObserver(pcurrent);
 		}
 		else if (box2.canSelect(pt.x, pt.y))
 		{
 			pcurrent = &box2;
 			box1.select(false);
 			box2.select(true);
-			mgr.getTextSink().setObserver(pcurrent);
 		}
 		else
 		{
-			mgr.getTextSink().setObserver(nullptr);
 			box1.select(false);
 			box2.select(false);
 			pcurrent = nullptr;

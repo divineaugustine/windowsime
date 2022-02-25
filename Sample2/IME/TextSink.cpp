@@ -1088,12 +1088,13 @@ void TextSink::setObserver(ISinkObserver* observer)
 		// TODO, Should we do this? Is this the right way to properly close the current composition ?
 		else
 		{
-			ITfDocumentMgr	*predocumentManager = nullptr;
-			threadManager->AssociateFocus(textStore->hwnd, textService.getDocumentManager(), &predocumentManager);
+			//ITfDocumentMgr	*predocumentManager = nullptr;
+			threadManager->SetFocus(textService.getDocumentManager());
+			/*threadManager->AssociateFocus(textStore->hwnd, textService.getDocumentManager(), &predocumentManager);
 			if (predocumentManager)
 			{
 				predocumentManager->Release();
-			}
+			}*/
 		}
 
 	}
