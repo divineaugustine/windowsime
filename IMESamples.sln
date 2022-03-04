@@ -7,6 +7,18 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IMESample2", "Sample2\IMESa
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IMESample1", "Sample1\IMESample1.vcxproj", "{AF6E9855-0273-4F7A-B560-35952F94C736}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "readme", "readme", "{2BD6381F-0C0A-4FE7-B334-C5679E144093}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{C687FA7C-B635-4903-B063-A8644D8B200C}"
+	ProjectSection(SolutionItems) = preProject
+		images\JapaneseIMEApp.gif = images\JapaneseIMEApp.gif
+		images\notepadChinese.gif = images\notepadChinese.gif
+		images\notepadJapanese.gif = images\notepadJapanese.gif
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -24,6 +36,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C687FA7C-B635-4903-B063-A8644D8B200C} = {2BD6381F-0C0A-4FE7-B334-C5679E144093}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6AF7AEEB-F84A-4C10-8636-1ACB61BA96FD}
