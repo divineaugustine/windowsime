@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{C687FA
 		images\JapaneseIMEApp.gif = images\JapaneseIMEApp.gif
 		images\notepadChinese.gif = images\notepadChinese.gif
 		images\notepadJapanese.gif = images\notepadJapanese.gif
+		images\windowhandle.gif = images\windowhandle.gif
 	EndProjectSection
 EndProject
 Global

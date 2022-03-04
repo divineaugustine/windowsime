@@ -1,14 +1,11 @@
 # windowsime
-Supporting Test app for windowless ime APIs. Below are the queries raised by Parmod.
-
-https://docs.microsoft.com/en-us/answers/questions/731668/ime-how-to-terminate-the-in-progress-composition.html  
-https://docs.microsoft.com/en-us/answers/questions/731701/how-to-enable-amp-disable-ime-input-for-an-applica.html  
-https://docs.microsoft.com/en-us/answers/questions/731755/ime-how-to-handle-candidate-list-numbering-in-japa.html  
-https://docs.microsoft.com/en-us/answers/questions/731708/ime-japanese-ime-is-not-working-on-window-10-1909.html    
+This repo contains the supporting sample application to demonstrate the issues faced with microsoft text service framework APIs for windowless IME support.
 
 **Context**  
 For regular win32 editboxes, when user selects a control, IME knows that it has switched to different window as  there is differnt window associated with each editbox. But in our product the entire UI is rendered using directx. So there is only one window which windows know about - that the main window. All the controls on this window will be drawn using directx. That is, all the editbox, lable, listbox, etc are custom drawn using directx.  
-This sample application is a quick and simple app which sort of imitates that drawing and windowing. This has only one main window and i draw two rectangles as editboxes. Mouse and keyboard events are handled at the window level and will be redirected to the targeted editbox object depending on the clicked area if it belong to it.
+This sample application is a quick and simple app which sort of imitates that drawing and windowing. This has only one main window and i draw two rectangles as editboxes. Mouse and keyboard events are handled at the window level and will be redirected to the targeted editbox object depending on the clicked area if it belong to it.  
+Below you can see the difference between our editbox and editboxes in an MFC app.
+![](images/windowhandle.gif)
 
 Now the problem is,
 
@@ -34,7 +31,12 @@ candidateListUiElement->GetSelection(&selection) even if we have not selected an
 ![](images/JapaneseIMEApp.gif)
 
 **Why do we have two Apps in this repo which are almost same ?**  
-With all the trial and errors, in our testing, App2 gives best results for issue 1. That is, App one has only one IME document manager for all the controls and App 2 has total two document managers. In App two, the focus of the document manager is set to a dummmy one when ever user has selected something which doesnt need IME. So when user moves out of one editbox, we set the focus to a dummy document manager and when selecting a control which requires IME, we set the actual document manager where we get all the callbacks. But we dont not know if this is the right approach.
+With all the trial and errors, in our testing, App2 gives best results for issue 1. That is, App one has only one IME document manager for all the controls and App 2 has total two document managers. In App two, the focus of the document manager is set to a dummmy one when ever user has selected something which doesnt need IME. So when user moves out of one editbox, we set the focus to a dummy document manager and when selecting a control which requires IME, we set the actual document manager where we get all the callbacks. But we dont not know if this is the right approach.  
 
 
-
+**Below are the queries raised by my colleague Parmod Kumar** 
+  
+[How to terminate the in progress composition ?](https://docs.microsoft.com/en-us/answers/questions/731668/ime-how-to-terminate-the-in-progress-composition.html)  
+[How to enable/disable IME per process ?](https://docs.microsoft.com/en-us/answers/questions/731701/how-to-enable-amp-disable-ime-input-for-an-applica.html)  
+[How to handle candidate list numbering in japanese ?](https://docs.microsoft.com/en-us/answers/questions/731755/ime-how-to-handle-candidate-list-numbering-in-japa.html )  
+[Why Japanese IME doesnt work in some machines ?](https://docs.microsoft.com/en-us/answers/questions/731708/ime-japanese-ime-is-not-working-on-window-10-1909.html)  
