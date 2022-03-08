@@ -1,5 +1,6 @@
 # windowsime
 This repo contains the supporting sample application to demonstrate the issues faced with microsoft text service framework APIs for windowless IME support.
+Usage of the Text service framework APIs are largely based on https://github.com/zupet/TSF-Test
 
 **Context**  
 For regular win32 editboxes, when user selects a control, IME knows that it has switched to different window as  there is differnt window associated with each editbox. But in our product the entire UI is rendered using directx. So there is only one window which windows know about - that the main window. All the controls on this window will be drawn using directx. That is, all the editbox, lable, listbox, etc are custom drawn using directx.  
